@@ -1,5 +1,6 @@
-<script>
-	export let data;
+<script lang="ts">
+    import type { Todo } from '$lib/server/database';
+	export let data: { todos: Todo[]};
 </script>
 
 <div class="centered">
@@ -25,10 +26,7 @@
 
 					const { id } = await response.json();
 
-					data.todos = [...data.todos, {
-						id,
-						description
-					}];
+					data.todos = [...data.todos, {id, description, done: false}];
 
 					input.value = '';
 				}
