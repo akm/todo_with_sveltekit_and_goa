@@ -1,7 +1,8 @@
-import { getTodos, type Todo } from '$lib/server/database';
+import { getTodos } from '$lib/apisvr/client';
+import type { Todo } from '$lib/apisvr/client';
 import type { ServerLoadEvent } from '@sveltejs/kit';
 
-export function load(event: ServerLoadEvent): { todos: Todo[] } {
+export async function load(event: ServerLoadEvent): Promise<{ todos: Todo[] }> {
 	const { cookies } = event;
 	let userid = cookies.get('userid');
 
@@ -10,7 +11,6 @@ export function load(event: ServerLoadEvent): { todos: Todo[] } {
 		cookies.set('userid', userid, { path: '/' });
 	}
 
-	return {
-		todos: getTodos(userid)
-	};
+	const todos = await getTodos();
+	return { todos };
 }
