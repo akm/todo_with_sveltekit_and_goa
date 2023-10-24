@@ -1,5 +1,6 @@
 <script lang="ts">
-    import type { Todo } from '$lib/server/database';
+	import { createTodo, toggleTodo, deleteTodo } from '$lib/apisvr/client';
+	import type { Todo } from '$lib/apisvr/client';
 	export let data: { todos: Todo[]};
 </script>
 
@@ -15,16 +16,9 @@
 				if (e.key === 'Enter') {
 					const input = e.currentTarget;
 					const description = input.value;
-					
-					const response = await fetch('/todo', {
-						method: 'POST',
-						body: JSON.stringify({ description }),
-						headers: {
-							'Content-Type': 'application/json'
-						}
-					});
 
-					const { id } = await response.json();
+					const todo = await createTodo({description});
+					const { id } = todo;
 
 					data.todos = [...data.todos, {id, description, done: false}];
 
@@ -42,25 +36,14 @@
 						type="checkbox"
 						checked={todo.done}
 						on:change={async (e) => {
-							const done = e.currentTarget.checked;
-
-							await fetch(`/todo/${todo.id}`, {
-								method: 'PUT',
-								body: JSON.stringify({ done }),
-								headers: {
-									'Content-Type': 'application/json'
-								}
-							});
+							await toggleTodo({id: todo.id, done: e.currentTarget.checked})
 						}}
 					/>
 					<span>{todo.description}</span>
 					<button
 						aria-label="Mark as complete"
 						on:click={async (e) => {
-							await fetch(`/todo/${todo.id}`, {
-								method: 'DELETE'
-							});
-
+							await deleteTodo({id: todo.id})
 							data.todos = data.todos.filter((t) => t !== todo);
 						}}
 					/>
