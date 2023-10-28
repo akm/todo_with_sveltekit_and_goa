@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@grpc/grpc-js": "^1.9.8"
+		"@grpc/grpc-js": "^1.9.8",
+		"google-protobuf": "^3.21.2"
 	}
 }
