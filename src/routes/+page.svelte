@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Todo } from '$lib/server/database';
+	import type { Todo } from '$lib/models/todo';
 	export let data: { todos: Todo[]};
 </script>
 
