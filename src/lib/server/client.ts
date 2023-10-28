@@ -1,7 +1,7 @@
 import { promisify } from 'util';
 import { credentials } from '@grpc/grpc-js';
 
-import { TodosClient, type ITodosClient } from '../protos/goagen_goa_todo_example_todos_grpc_pb';
+import { TodosClient, type ITodosClient } from './goagen_goa_todo_example_todos_grpc_pb';
 import {
 	ListRequest,
 	ListResponse,
@@ -11,7 +11,7 @@ import {
 	UpdateResponse,
 	DeleteRequest,
 	DeleteResponse
-} from '../protos/goagen_goa_todo_example_todos_pb';
+} from './goagen_goa_todo_example_todos_pb';
 
 export type Todo = {
 	id: string;
