@@ -2,7 +2,8 @@ import { promisify } from 'util';
 import { credentials } from '@grpc/grpc-js';
 
 import type { Todo } from '$lib/models/todo';
-import { TodosClient, type ITodosClient } from './goagen_goa_todo_example_todos_grpc_pb';
+import { TodosClient } from './goagen_goa_todo_example_todos_grpc_pb';
+import type { ITodosClient } from './goagen_goa_todo_example_todos_grpc_pb';
 import {
 	ListRequest,
 	ListResponse,
