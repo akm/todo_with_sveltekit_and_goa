@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createTodo, toggleTodo, deleteTodo } from '$lib/server/client';
-	import type { Todo } from '$lib/server/client';
+	import type { Todo } from '$lib/models/todo';
 	export let data: { todos: Todo[]};
 </script>
 
