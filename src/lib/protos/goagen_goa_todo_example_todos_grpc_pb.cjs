@@ -10,7 +10,7 @@
 //
 'use strict';
 var grpc = require('@grpc/grpc-js');
-var goagen_goa_todo_example_todos_pb = require('./goagen_goa_todo_example_todos_pb.js');
+var goagen_goa_todo_example_todos_pb = require('./goagen_goa_todo_example_todos_pb');
 
 function serialize_todos_CreateRequest(arg) {
   if (!(arg instanceof goagen_goa_todo_example_todos_pb.CreateRequest)) {
