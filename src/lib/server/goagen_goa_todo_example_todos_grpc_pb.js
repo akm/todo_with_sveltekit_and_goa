@@ -9,8 +9,10 @@
 // $ goa gen github.com/akm/goa_todo_example/design
 //
 'use strict';
-var grpc = require('@grpc/grpc-js');
-var goagen_goa_todo_example_todos_pb = require('./goagen_goa_todo_example_todos_pb.js');
+// var grpc = require('@grpc/grpc-js');
+import grpc from '@grpc/grpc-js'
+// var goagen_goa_todo_example_todos_pb = require('./goagen_goa_todo_example_todos_pb.js');
+import goagen_goa_todo_example_todos_pb from './goagen_goa_todo_example_todos_pb.js';
 
 function serialize_todos_CreateRequest(arg) {
   if (!(arg instanceof goagen_goa_todo_example_todos_pb.CreateRequest)) {
@@ -124,7 +126,7 @@ function deserialize_todos_UpdateResponse(buffer_arg) {
 
 
 // Service is the todos service interface.
-var TodosService = exports.TodosService = {
+export const TodosService = {
   // List implements list.
 list: {
     path: '/todos.Todos/List',
@@ -187,4 +189,5 @@ delete: {
   },
 };
 
-exports.TodosClient = grpc.makeGenericClientConstructor(TodosService);
+// exports.TodosClient = grpc.makeGenericClientConstructor(TodosService);
+export const TodosClient = grpc.makeGenericClientConstructor(TodosService);
