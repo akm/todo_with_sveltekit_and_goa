@@ -31,6 +31,7 @@
 	"type": "module",
 	"dependencies": {
 		"@grpc/grpc-js": "^1.9.8",
-		"google-protobuf": "^3.21.2"
+		"google-protobuf": "^3.21.2",
+		"vite-plugin-require": "^1.1.11"
 	}
 }
