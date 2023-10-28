@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@grpc/grpc-js": "^1.9.7"
+		"@grpc/grpc-js": "^1.9.7",
+		"vite-plugin-require": "^1.1.11"
 	}
 }
