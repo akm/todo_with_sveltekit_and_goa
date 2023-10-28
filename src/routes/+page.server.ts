@@ -1,5 +1,5 @@
-import { getTodos } from '$lib/apisvr/client';
-import type { Todo } from '$lib/apisvr/client';
+import { getTodos } from '$lib/server/client';
+import type { Todo } from '$lib/server/client';
 import type { ServerLoadEvent } from '@sveltejs/kit';
 
 export async function load(event: ServerLoadEvent): Promise<{ todos: Todo[] }> {
