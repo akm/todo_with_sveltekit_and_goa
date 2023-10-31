@@ -1,0 +1,35 @@
+{
+  "name": "todo_client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "grpc:gen": "protoc --ts_out src/protos --proto_path ../../gen/grpc/todos/pb ../../gen/grpc/todos/pb/goagen_goa_todo_example_todos.proto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akm/goa_todo_example.git"
+  },
+  "keywords": [
+    "goa",
+    "grpc",
+    "openapi"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akm/goa_todo_example/issues"
+  },
+  "homepage": "https://github.com/akm/goa_todo_example#readme",
+  "devDependencies": {
+    "@protobuf-ts/plugin": "^2.9.1",
+    "@types/node": "^20.8.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.5",
+    "@protobuf-ts/grpc-transport": "^2.9.1"
+  }
+}

@@ -1,8 +1,4 @@
-export type Todo = {
-	id: string;
-	description: string;
-	done: boolean;
-};
+import type { Todo } from '$lib/models/todo';
 
 const database = new Map<string, Map<string, Todo>>();
 
